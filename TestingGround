@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form</title>
+<script>
+// Function to validate the case number input
+function validateCaseNumber() {
+  var casenumber = document.getElementById("casenumber").value;
+  var regex = /^\d{2}-\d{4}$/;
+  if (!regex.test(casenumber)) {
+    alert("Invalid case number format. Please enter a case number in the format 00-0000.");
+    return false;
+  }
+  return true;
+}
+
+// Function to validate the date input
+function validateCaseDate() {
+  var casedate = document.getElementById("casedate").value;
+  var regex = /^\d{2}\/\d{2}\/\d{4}$/;
+  if (!regex.test(casedate)) {
+    alert("Invalid date format. Please enter a date in the format 00/00/0000.");
+    return false;
+  }
+  return true;
+}
+
+// Function to validate the first name input
+function
+ 
+validateFirstName() {
+  var firstname = document.getElementById("firstname").value;
+  var regex = /^[a-zA-Z]+$/;
+  if (!regex.test(firstname)) {
+    alert("Invalid first name. Please enter a first name that contains only letters.");
+    return
+ 
+false;
+  }
+  return
+ 
+true;
+}
+
+// Function to validate the last name input
+
+function
+ 
+validateLastName() {
+  var lastname = document.getElementById("lastname").value;
+  var regex = /^[a-zA-Z]+$/;
+  if (!regex.test(lastname)) {
+    alert("Invalid last name. Please enter a last name that contains only letters.");
+    return
+ 
+false;
+  }
+  return
+ 
+true;
+}
+
+// Function to validate the price input
+
+function
+ 
+validatePrice() {
+  var pricevalue = document.getElementById("pricevalue").value;
+  var regex = /^[0-9]+$/;
+  if (!regex.test(pricevalue)) {
+    alert("Invalid price value. Please enter a price that contains only numbers.");
+    return
+ 
+false;
+  }
+  return
+ 
+true;
+}
+
+// Function to submit the form
+
+function
+ 
+submitForm() {
+  // Validate the form inputs
+
+  
+if (!validateCaseNumber() || !validateCaseDate() || !validateFirstName() || !validateLastName() || !validatePrice()) {
+    return
+ 
+false;
+  }
+
+  // Get the form input values
+
+  
+var casenumber = document.getElementById("casenumber").value;
+  var casedate = document.getElementById("casedate").value;
+  var firstname = document.getElementById("firstname").value;
+  var lastname = document.getElementById("lastname").value;
+  var pricevalue = document.getElementById("pricevalue").value;
+
+  // Output the form input values to the endresult paragraph
+
+  
+var endresult = document.getElementById("endresult");
+  endresult.innerHTML = "Case number: " + casenumber + "<br>Case date: " + casedate + "<br>First name: " + firstname + "<br>Last name: " + lastname + "<br>Price: $" + pricevalue;
+
+  return
+ 
+true;
+}
+</script>
+
+</head>
+
+<body>
+
+<form
+ 
+action="/action_page.php"
+ 
+method="post"
+ 
+onsubmit="return submitForm()">
+
+<table>
+
+  
+<tr>
+
+    
+<td>Case number:</td>
+
+    
+<td><input
+ 
+type="text"
+ 
+id="casenumber"
+ 
+required></td>
+
+    
+<td>Date:</td>
+
+    
+<td><input
+ 
+type="text"
+ 
+id="casedate"
+ 
+required></td>
+
+    
+<td>First name:</td>
+
+    
+<td><input
+ 
+type="text"
+ 
+id="firstname"
+ 
+required></td>
+
+    
+<td>Last name:</td>
+
+    
+<td><input
+ 
+type="text"
+ 
+id="lastname"
+ 
+required></td>
+
+    
+<td>Price:</td>
+
+    
+<td><input
+ 
+type="text"
+ 
+id="pricevalue"
+ 
+required></td>
+
+  
+</tr>
+
+</table>
+
+<br>
+
+<textarea
+ 
+id="endresult"
+ 
+cols="50"
+ 
+rows="6"></textarea>
+
+<br>
+
+<input
+ 
+type="submit"
+ 
+value="Submit">
+
+</form>
+
+</body>
+
+</html>
