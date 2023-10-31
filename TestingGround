@@ -117,13 +117,7 @@ true;
 
 <body>
 
-<form
- 
-action="/action_page.php"
- 
-method="post"
- 
-onsubmit="return submitForm()">
+<form id="formSubmission">
 
 <table>
 
@@ -134,61 +128,31 @@ onsubmit="return submitForm()">
 <td>Case number:</td>
 
     
-<td><input
- 
-type="text"
- 
-id="casenumber"
- 
-required></td>
+<td><input type="text" id="casenumber" required></td>
 
     
 <td>Date:</td>
 
     
-<td><input
- 
-type="text"
- 
-id="casedate"
- 
-required></td>
+<td><input type="text" id="casedate" required></td>
 
     
 <td>First name:</td>
 
     
-<td><input
- 
-type="text"
- 
-id="firstname"
- 
-required></td>
+<td><input type="text" id="firstname" required></td>
 
     
 <td>Last name:</td>
 
     
-<td><input
- 
-type="text"
- 
-id="lastname"
- 
-required></td>
+<td><input type="text" id="lastname" required></td>
 
     
 <td>Price:</td>
 
     
-<td><input
- 
-type="text"
- 
-id="pricevalue"
- 
-required></td>
+<td><input type="text" id="pricevalue" required></td>
 
   
 </tr>
@@ -197,21 +161,11 @@ required></td>
 
 <br>
 
-<textarea
- 
-id="endresult"
- 
-cols="50"
- 
-rows="6"></textarea>
+<textarea id="endresult" cols="50" rows="6"></textarea>
 
 <br>
 
-<input
- 
-type="submit"
- 
-value="Submit">
+<input type="submit" onClick="endresult()" value="Submit">
 
 </form>
 
